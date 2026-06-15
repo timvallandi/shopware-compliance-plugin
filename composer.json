@@ -1,0 +1,27 @@
+{
+  "name": "tvwebdev/product-compliance",
+  "description": "Product-specific compliance notices for Shopware 6.6",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "TvWebDev\\ProductCompliance\\": "src/"
+    }
+  },
+  "require": {
+    "shopware/core": "^6.6",
+    "shopware/storefront": "^6.6",
+    "shopware/administration": "^6.6"
+  },
+  "extra": {
+    "shopware-plugin-class": "TvWebDev\\ProductCompliance\\TvWebDevProductCompliance",
+    "label": {
+      "de-DE": "TvWebDev Produkt- und Compliance-Hinweise",
+      "en-GB": "TvWebDev Product Compliance Notices"
+    },
+    "description": {
+      "de-DE": "Pflegt und zeigt produktbezogene Pflicht- und Anwendungshinweise.",
+      "en-GB": "Maintains and displays product-specific legal and usage notices."
+    }
+  }
+}
