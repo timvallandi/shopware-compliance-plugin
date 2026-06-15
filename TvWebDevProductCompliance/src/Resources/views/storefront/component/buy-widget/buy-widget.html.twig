@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget_buy_form %}
+    {% set complianceNotice = product.extensions.tvwebdevProductComplianceNotice ?? page.product.extensions.tvwebdevProductComplianceNotice ?? null %}
+
+    {% if complianceNotice %}
+        <div class="tvwebdev-product-compliance-notice alert alert-info text-white mt-3 p-2"
+             role="note"
+             aria-label="{{ 'tvwebdev-product-compliance.storefront.headline'|trans|striptags }}">
+            <strong class="d-block mb-1">
+                {{ 'tvwebdev-product-compliance.storefront.headline'|trans|sw_sanitize }}
+            </strong>
+            <div class="tvwebdev-product-compliance-notice__text">
+                {{ complianceNotice.notice|sw_sanitize|nl2br }}
+            </div>
+        </div>
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}

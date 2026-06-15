@@ -1,0 +1,12 @@
+{
+  "tvwebdev-product-compliance": {
+    "admin": {
+      "cardTitle": "Product & compliance notice",
+      "requiredLabel": "Special notice required",
+      "requiredHelpText": "Enables the notice text on the product detail page.",
+      "noticeLabel": "Notice text",
+      "noticePlaceholder": "Enter legal or usage-related product notice...",
+      "noticeHelpText": "The text can only be maintained while the special notice is enabled."
+    }
+  }
+}

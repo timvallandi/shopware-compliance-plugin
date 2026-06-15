@@ -1,0 +1,50 @@
+{% block sw_product_detail_specifications_custom_fields %}
+    {% block tvwebdev_product_compliance_card %}
+        <sw-card
+            v-show="tvwebdevShowComplianceCard"
+            class="tvwebdev-product-compliance-card"
+            position-identifier="tvwebdev-product-compliance-card"
+            :title="$tc('tvwebdev-product-compliance.admin.cardTitle')"
+            :is-loading="loading.product"
+        >
+            <sw-container
+                columns="1fr"
+                gap="16px"
+            >
+                <sw-checkbox-field
+                    v-model:value="tvwebdevComplianceRequired"
+                    name="tvwebdev-product-compliance-required"
+                    :label="$tc('tvwebdev-product-compliance.admin.requiredLabel')"
+                    :help-text="$tc('tvwebdev-product-compliance.admin.requiredHelpText')"
+                    :disabled="!acl.can('product.editor')"
+                />
+
+                <sw-textarea-field
+                    v-model:value="tvwebdevComplianceNotice"
+                    name="tvwebdev-product-compliance-notice"
+                    :label="$tc('tvwebdev-product-compliance.admin.noticeLabel')"
+                    :placeholder="$tc('tvwebdev-product-compliance.admin.noticePlaceholder')"
+                    :help-text="$tc('tvwebdev-product-compliance.admin.noticeHelpText')"
+                    :disabled="tvwebdevComplianceNoticeDisabled"
+                />
+            </sw-container>
+        </sw-card>
+    {% endblock %}
+
+    <sw-card
+        v-show="tvwebdevShowCustomFieldsCard"
+        class="sw-product-detail-specification__custom-fields"
+        position-identifier="sw-product-detail-specifications-custom-fields"
+        :title="$tc('sw-product.specifications.cardTitleCustomFields')"
+    >
+        {% block sw_product_detail_specifications_custom_fields_content %}
+            <sw-custom-field-set-renderer
+                show-custom-field-set-selection
+                :entity="product"
+                :parent-entity="parentProduct"
+                :sets="tvwebdevFilteredCustomFieldSets"
+                :disabled="!acl.can('product.editor')"
+            />
+        {% endblock %}
+    </sw-card>
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "tvwebdev-product-compliance": {
+    "admin": {
+      "cardTitle": "Produkt- & Compliance-Hinweis",
+      "requiredLabel": "Besonderer Hinweis erforderlich",
+      "requiredHelpText": "Aktiviert die Ausgabe des Hinweistextes auf der Produktdetailseite.",
+      "noticeLabel": "Hinweistext",
+      "noticePlaceholder": "Rechtlichen oder anwendungsbezogenen Produkthinweis eingeben...",
+      "noticeHelpText": "Der Text ist nur pflegbar, wenn der besondere Hinweis aktiv ist."
+    }
+  }
+}
